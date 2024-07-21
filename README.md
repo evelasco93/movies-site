@@ -6,7 +6,7 @@ This is a basic site that displays a catalogue of movies that makes use of the h
 
 ## FRONTEND
 
-<>Javascript
+- Javascript
 - HTML
 - CSS
 
