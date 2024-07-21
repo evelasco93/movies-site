@@ -1,19 +1,19 @@
 # INFO
 
-This is a basic site that displays a catalogue of movies and makes uses of the https://www.themoviedb.org/ API to retrieve movies
+This is a basic site that displays a catalogue of movies that makes use of the https://www.themoviedb.org/ API to retrieve movies based on user search and an API for users to leave movie reviews, resulting in a fullstack project implementing different technologies.
 
 # TECHNOLOGIES USED
 
 ## FRONTEND
 
 <>Javascript
-<>HTML
-<>CSS
+- HTML
+- CSS
 
 ## BACKEND
 
-<>Node.js
-<>MongoDB
+- Node.js
+- MongoDB
 
 # USAGE
 
