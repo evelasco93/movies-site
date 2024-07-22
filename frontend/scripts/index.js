@@ -1,13 +1,13 @@
 const API_KEY = ""; // ENTER YOUR API KEY HERE
 const API_LINK = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`;
-const IMG_PATH = "https://image.tmdb.org/t/p/w1280"; // static path for the cover image for movies
-const API_QUERY = `https://api.themoviedb.org/3/search/movie?&api_key=${API_KEY}&query=`; // base query for moviedb api
+const IMG_PATH = "https://image.tmdb.org/t/p/w1280"; 
+const API_QUERY = `https://api.themoviedb.org/3/search/movie?&api_key=${API_KEY}&query=`; 
 
 const mainSection = document.getElementById("movies-section");
 const form = document.getElementById("form");
 const searchValue = document.getElementById("query");
 
-document.addEventListener('DOMContentLoaded', () => movieSearch(API_LINK)); // returns the latest movie list from the API
+document.addEventListener("DOMContentLoaded", () => movieSearch(API_LINK)); 
 
 async function movieSearch(url) {
   try {
@@ -20,8 +20,8 @@ async function movieSearch(url) {
 }
 
 function displayMovies(movies) {
-  mainSection.innerHTML = '';
-  movies.forEach(movie => {
+  mainSection.innerHTML = "";
+  movies.forEach((movie) => {
     const movieCard = createMovieCard(movie);
     mainSection.appendChild(movieCard);
   });
@@ -31,17 +31,16 @@ function createMovieCard(movie) {
   const card = document.createElement("div");
   card.className = "card";
 
-  const center = document.createElement("center");
   const image = document.createElement("img");
   image.className = "thumbnail";
   image.src = `${IMG_PATH}${movie.poster_path}`;
-  
-  const title = document.createElement("h3");
+
+  const title = document.createElement("a");
   title.className = "movie-title";
+  title.href = `movie.html?id=${movie.id}&title=${movie.title}`;
   title.textContent = movie.title;
 
-  center.appendChild(image);
-  card.appendChild(center);
+  card.appendChild(image);
   card.appendChild(title);
 
   return card;
